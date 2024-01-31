@@ -11,7 +11,7 @@ import { SwaggerModule, DocumentBuilder } from '@nestjs/swagger';
 import { AppModule } from './app.module';
 import { renderFile } from './kernel/helpers/view.helper';
 import { HttpExceptionLogFilter } from './kernel/logger/http-exception-log.filter';
-import { RedisIoAdapter } from './modules/socket/redis-io.adapter';
+// import { RedisIoAdapter } from './modules/socket/redis-io.adapter';
 
 async function bootstrap() {
   const app = await NestFactory.create<NestExpressApplication>(AppModule);
@@ -23,7 +23,7 @@ async function bootstrap() {
   app.engine('html', renderFile);
   app.set('view engine', 'html');
   // socket io redis - for chat
-  app.useWebSocketAdapter(new RedisIoAdapter(app));
+  // app.useWebSocketAdapter(new RedisIoAdapter(app));
 
   if (process.env.NODE_ENV === 'development') {
     // generate api docs
