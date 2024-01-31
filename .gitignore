@@ -54,7 +54,6 @@ api/public
 api/*.lock
 
 *.lock
-package-lock.json
 obfuscator
 
 mobile-rn
