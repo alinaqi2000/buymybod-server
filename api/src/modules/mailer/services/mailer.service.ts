@@ -121,7 +121,7 @@ export class MailerService {
   }
 
   public async send(email: IMail) {
-    await this.mailerQueue.createJob(email).save();
+    // await this.mailerQueue.createJob(email).save();
   }
 
   public async verify() {
